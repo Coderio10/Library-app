@@ -1,14 +1,26 @@
 import React from 'react';
-import Heroimg from "./assets/2.jpg";
+import Categories from './categories'
 import "./css/index.css"
 
 
-export default function HeroSection() {
+export default function HeroSection(props) {
+    
+    const [action, nextPage] = React.useState(false)
+
+    function btnAction() {
+        nextPage(prev => !prev)
+    }
+
     return (
-        <section className="hero">
-            <img src={Heroimg}  alt="Logo" className='hero-img'  /> 
-            <h1 className='hero-header'>Online Experience</h1>   
-            <p className='hero-text'>Join unique interactive activities led by one-of-a-kind hosts-all without leaving home</p>
-        </section>
+        <div>
+            { !action && <section className="hero">
+                <h1 className='hero-header'>It's time to starve our ignorance!</h1>   
+                <p className='hero-text'>Welcome to the bank of knowledge, A place where you get to learn principles that will shape your life</p>
+                <button onClick={btnAction} >Let's Explore</button>
+                <p>{action}</p>
+            </section> }
+            { action && <Categories />}
+        </div>
+
     )
 } 

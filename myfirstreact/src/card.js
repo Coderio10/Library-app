@@ -1,18 +1,26 @@
 import React from 'react';
-import Cardimg from "./assets/3.jpg";
 import "./css/index.css"
 
 export default function CardSection(props) {
+
+    let badgeText
+    if (props.openSpots === 0) {
+        badgeText = "Sold out"
+    }else if (props.location === "Online") {
+        badgeText = "Online"
+    }
+
     return (
         <section className="card-sec">
-            <img src={Cardimg}  alt="Logo" className='card-img'  /> 
+            {badgeText && <div className="card-badge">{badgeText}</div>}
+            <img src={props.coverImg}  alt="Logo" className='card-img'  /> 
             <div className='card-stats' >
-                <span>⭐ 5.0</span>
-                <span className='grey'>(6) *</span>
-                <span className='grey'>USA</span>
+                <span>⭐ {props.stats.rating}</span>
+                <span className='grey'>({props.stats.reviewCount}) *</span>
+                <span className='grey'>{props.country }</span>
             </div>
-            <p>Life Lessons with Katle Zaferes </p>
-            <p><span className='bold'>From $135</span> / person</p>
+            <p>{props.title} </p>
+            <p><span className='bold'>From ${props.price}</span> / person</p>
         </section>
     )
 } 
