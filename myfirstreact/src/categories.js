@@ -14,13 +14,8 @@ export default function Cat() {
 
     function doTest(e) {
         console.log(`ID: ${e}`)
-        visibility( prev => !prev)
+        visibility(true)
         changeSelectedId(e)
-    }
-
-    function undoTest() {
-      visibility( prev => !prev)
-      changeSelectedId('')
     }
 
     const filterData = catData.filter((el)=>{
@@ -43,21 +38,13 @@ export default function Cat() {
       })
     })
 
-    const Categories = catData.map(item => {
-      return (
-        <span 
-            id={item.id} 
-            onClick={doTest(item.id)} 
-        >{item.text}</span>
-      )
-    })
-
     const CatEl = (props) => {
       return (
-        <section>
+        <section className='Book-comp'>
           <h1>Niche: {props.niche}</h1> 
-          {/* <div>{Categories}</div> */}
-          <button onClick={undoTest}>Back</button>
+          <div className='book-cat-sec'> 
+            {CatsData}
+          </div>
           <div className="book-sec">
             {bookData}
           </div>

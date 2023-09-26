@@ -8,6 +8,7 @@ import Play from "./PlayGround"
 import Contactcard from "./Contact"
 import ContactData from "./contactData"
 import "./css/index.css"
+import pdf from './assets/how-to-be-yourself.pdf'
 
 const Page = () => {
   
@@ -34,6 +35,7 @@ const Page = () => {
         <Hero />
         <section className='cardSection'>{cards}</section>
         <div className="Contact">{Contactcards}</div>
+        <input type='file' />
       </main>
     )
 } 
