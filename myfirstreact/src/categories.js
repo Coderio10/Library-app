@@ -1,76 +1,42 @@
 import React from 'react'
 import "./css/index.css"
-import CatComponent from './categoriesComponent'
-import {catData} from './categoriesData'
+// import CatComponent from './categoriesComponent'
+// import {catData} from './categoriesData'
 import BookComponent from './booksComponent'
+// import Card from './searchData'
+import axios from 'axios';
 
 
 export default function Cat() {
-  // State that determine the Visibility of the category section
-    const [catId, visibility] = React.useState(false)
+  
+  const [search, setSearch] = React.useState("")
+  const [bookDatas, setData] = React.useState([])
 
-    // State collects the selected id  
-    const [selectedId, changeSelectedId] = React.useState('')
-
-    function doTest(e) {
-        console.log(`ID: ${e}`)
-        visibility(true)
-        changeSelectedId(e)
+    const searchBook = (evt) => {
+        if (evt.key === "Enter") {
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCG4U2i3d-EwiYUNdtb-d9CmS8wUPoyRuE' + '&maxResults=40')
+            .then(res => setData(res.data.items))
+            .catch(err => console.log(err))
+        }
     }
-
-    const filterData = catData.filter((el)=>{
-      return el.id === selectedId
-    })
-    
-    console.log(filterData)
-    
-    const bookData = filterData.map(data => {
-      let dataContent = data.content
-      return dataContent.map(item => {
-        return (
-          <BookComponent 
-            key={item?.title}
-            imgUrl={item?.imgUrl}
-            title={item.title}
-            {...item}
-          /> 
-        )
-      })
-    })
-
-    const CatEl = (props) => {
-      return (
-        <section className='Book-comp'>
-          <h1>Niche: {props.niche}</h1> 
-          <div className='book-cat-sec'> 
-            {CatsData}
-          </div>
-          <div className="book-sec">
-            {bookData}
-          </div>
-        </section> 
-      )
-    }
-
-
-    const CatsData = catData.map(item => {
-        return (
-          <CatComponent 
-            key={item.key}
-            {...item}
-            func={doTest}
-          />
-        )
-    })
 
     return (
         <div>
-          { !catId && <section className="categories">
-                <h1>What niche are you looking for? </h1>
-                <div>{CatsData}</div>
-            </section>
-          }
-          { catId && <CatEl niche={selectedId} /> }          
+            <section className="categories">
+              <div className='search-section'>
+                <div>
+                    <h1 className='hero-header'>It's time to starve our ignorance!</h1>   
+                    <p className='hero-text'>Welcome to the bank of knowledge, A place where you get to learn principles that will shape your life</p>
+                    <input type='text' placeholder='Search...'
+                        value={search} onChange={e => setSearch(e.target.value)} onKeyPress={searchBook}/>
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+              <div>
+                    {/* <BookComponent book={bookDatas}/>     */}
+                </div> 
+            </section>  
+                    
         </div>
     )
 }

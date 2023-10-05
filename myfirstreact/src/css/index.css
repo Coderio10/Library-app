@@ -1,15 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal&family=Istok+Web&family=Roboto+Condensed:wght@700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primaryColor: #F5F5DC;
+    --secondaryColor: #DAA520;
+    --other: #a9a9a9;
+    --white: #ffffff;
+    --text: #4e505d;
+    --btnColor: #0b5dac;
+}
+
 h1, h2, h3, button, .tag-sec .tag-el {
-    font-family: "Gabriola", sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    /* font-family: 'Istok Web', sans-serif; */
 }
 
 p, .categories span, .book-cat-sec span {
-    font-family: "Chiller", sans-serif;
+    font-family: 'Arsenal', sans-serif;
 }
 
 button,
@@ -41,56 +53,83 @@ section {
 }
 
 .hero{
-    background: #000000a4 url("../assets/bg.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: overlay;
+    background: linear-gradient(to right,#b9bfff, #a8bdfc, #8594fb);
     display: flex;
+    flex-flow: row, wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border-bottom: 2px solid #f1f1f1; 
     min-height: 100vh;
-    color: white;
-    line-height: 1.5;
+    color: var(--text);
+    padding: 0 4rem;
 }
 
-.hero h1 {
-    font-size: 46px;
+/* text Section */
+.hero .text-sec{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 1px solid red; */
+    width: 55%;
+    padding-right: 1.5rem;
 }
 
-.hero p {
-    font-size: 24px;
+
+.input-sec {
+    display: flex;
+    align-items: center;
+    /* border: 1PX solid rebeccapurple; */
 }
 
-.hero button {
-    margin-top: 30px;
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 7px 20px;
+.input-sec .input{
+    width: 300px;
+    height: 45px;
     border-radius: 20px;
+    border: none;
+    text-indent: 10px;
+    outline: none;
+    padding-right: 55px;
+}
+
+.input-sec button {
+    display: block;
+    background-color: var(--btnColor);
+    color: var(--white);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    width: 100px;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    margin-left: -50px;
+    cursor: pointer;
 }
 
 .hero button:hover {
-    color: black;
-    background-color: white;
+    opacity: 1.2;
+    
 }
 
-.hero-header {
-    font-size: 3rem;
+.text-sec h1 {
+    font-size: 38px;
 }
 
-.hero-text {
-    margin-bottom: 0;
-    font-size: 1rem;
+.text-sec p {
+    font-size: 18px;
+}
+
+/* Image Section */
+.img-sec {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    width: 45%;
 }
 
 /* Categories */
 .categories {
-    background: #00000087 url(../assets/cat-sec.jpg);
+    background: var(--secondaryColor);
     background-position: center;
     background-size: cover;
     background-blend-mode: overlay;
@@ -103,111 +142,58 @@ section {
     padding: 0 3rem;
 }
 
-.categories h1 {
-    font-size: 54px;
-    color: #fff;
-}
-
-.categories div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid rebeccapurple; */
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 ;
-}
-
-.book-cat-sec {
-    background-color: #e9e8e8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.categories input {
+    width: 250px;
+    height: 30px;
     border-radius: 5px;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    margin-bottom: 2rem;
+    border: 2px solid var(--primaryColor);
+    background-color: transparent; 
+    text-indent: 10px;
+    color: var(--primaryColor);
+    font-size: 12px;
+    margin-right: 10px;
 }
 
-
-.categories span,
-.book-cat-sec span {
-    display: block;
-    font-size: 20px;
-    padding: 10px 15px;
-    color: white;
-    font-weight: 700;
-    border-radius: 15px;
-    text-align: center;
-    letter-spacing: 2px;    
+.categories input::placeholder {
+    color:  var(--primaryColor);
+    font-size: 12px; 
 }
 
-.book-cat-sec span {
-    font-size: 16px;
+.search-section {
+    width: 100%;
+    height: 200px;
+    border: 1px solid red;
+    margin-top: 100px;
 }
 
-.categories span:nth-child(1),
-.book-cat-sec span:nth-child(1) {
-    background-color: magenta;
-}
-
-.categories span:nth-child(2),
-.book-cat-sec span:nth-child(2) {
-    background-color: orange;
-}
-.categories span:nth-child(3),
-.book-cat-sec span:nth-child(3) {
-    background-color: blue;
-}
-.categories span:nth-child(4),
-.book-cat-sec span:nth-child(4) {
-    background-color: blueviolet;
-}
-.categories span:nth-child(5),
-.book-cat-sec span:nth-child(5) {
-    background-color: green;
-}
-.categories span:nth-child(6),
-.book-cat-sec span:nth-child(6) {
-    background-color: magenta;
-}
-.categories span:nth-child(7),
-.book-cat-sec span:nth-child(7) {
-    background-color: violet;
-}
-.categories span:nth-child(8),
-.book-cat-sec span:nth-child(8) {
-    background-color: indigo;
-}
-.categories span:nth-child(9),
-.book-cat-sec span:nth-child(9) {
-    background-color: red;
-}
-
-.Book-comp h1 {
-    font-size: 28px;
-}
-
-.book-sec {
-    background: #e9e8e8;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
+.result-section{
+    width: 100%;
+    background-color: var(--primaryColor);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    align-items: flex-start;   
+    border-radius: 5px;
     gap: 1rem;
-    border-radius: 5px;
-    padding: 1rem;
+    row-gap: 2rem;
+    padding: 2rem 1rem;
 }
+
+
+
 /* Book Element */
+.result-section > *,
 .bookEle {
     border: 1px solid red;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 5px;
     background-color: white;
-    width: 200px;
+    width: 190px;
     display: flex;
     align-items: center;
     flex-flow: column wrap;
     gap: 1rem;
+    text-align: center;
+    font-weight: 700;
 }
 
 .bookEle img {
@@ -215,112 +201,19 @@ section {
     border-radius: 5px;
 }
 
-.bookEle p {
-    font-size: 20px;
-}
-
-.tag-sec {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-}
-
-.tag-sec .tag-el {
-    font-size: 14px;
-    background-color: orange;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    padding: 3px 5px;
-}
-
-/* card Section */
-.cardSection {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    border-bottom: 2px solid #f1f1f1;
-}
-
-.card-sec {
-    margin: 4rem auto;
-    padding: 0.5rem;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    font-size: 12px;
-    box-shadow: 0 0 4px 4px #f2f2f2;
-    border-radius: 10px;
-    position: relative;
-}
-
-.card-img {
-    width: 220px;
-    height: 300px;
-    border-radius: 10px;
-}
-
-.card-stats {
-    padding: 0.5rem 0;
-}
-
-.card-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-
-/* contact Section */
-.Contact {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto; 
-    padding: 1rem 3rem;
-}
-
-.contact-card {
-    /* display: flex;
-    flex-direction: column; */
-    border-radius: 6px;  
-    padding: 0.5rem;
-    /* width: 250px; */
-    /* height: auto; */
-    box-shadow: 0 0 4px 4px #f2f2f2;
-}
-
-.contact-card img {
+.pop-up {
+    min-height: 100vh;
     width: 100%;
-    height: 150px;
-    align-self: center;
-    border-radius: 6px;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+
 }
 
-.details {
-    padding: 1rem 0;
-}
-
-.details h3 {
-    margin-bottom: 0.5rem;
-}
-
-.details p {
-    font-size: 14px;
-}
-
-/* footer */
-.footer {
-    background-color: #f2f2f2;
-    padding: 1rem 0;
-    text-align: center;
+.pop-up-inner {
+    
 }
