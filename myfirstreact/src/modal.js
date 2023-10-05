@@ -1,26 +1,32 @@
 import React from 'react'
 import "./css/index.css"
+import big from "./assets/React-logo.svg"
 
-export default function bookComponent({book}) {
+export default function bookComponent({show, item, onClose} ) {
+
+    if(!show){
+        return null
+    }
+
+    let Thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail
+
 
     return (
         <div className='pop-up'>
             <div className='pop-up-inner'>
-                <button className='close'>
-                    {/* <FontAwesomeIcon icon={faClose} /> */}
+                <button className='close' onClick={() => onClose()}>
+                    {/* <FontAwesomeIcon icon={faClose} /> */} x
                 </button>
                 <div className='innerBox'>
-                    <img src='./assets/React-logo.svg' alt='' />
+                    <img src={Thumbnail} alt='' />
                     <div className='info'>
-                        <h1> Eloquent JavaScript </h1>
-                        <h2>Java Kate</h2><br />
-                        <h4>pricee Ltd.<span>2016-19-13</span></h4><br/>
-                        <a href='#'><button>More</button></a>
+                        <h1>{item.volumeInfo.title}</h1>
+                        <h3>{item.volumeInfo.authors}</h3>
+                        <h4>{item.volumeInfo.publisher} <span>{item.volumeInfo.publishedDate}</span></h4><br/>
+                        <a href={item.volumeInfo.previewLink} target='_blank'><button>More</button></a>
                     </div>
                 </div>
-                <h4 className='description'>
-                    lorem ipsumdsnfdfewhfjikwefhwefbw fweufwtfieriierg errerurwferuhueg urwefyergyr uhgreuthwfrygreuiertwerf uigergerger eruertferuerhgguhueggerguerguhherureghergeruhhtgerugher 8tre
-                </h4>
+                <p className='description'>{item.volumeInfo.description}</p>
             </div>
         </div>
         

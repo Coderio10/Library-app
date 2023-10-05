@@ -15,13 +15,18 @@
     --btnColor: #0b5dac;
 }
 
-h1, h2, h3, button, .tag-sec .tag-el {
+h1, button{
     font-family: 'Roboto Condensed', sans-serif;
-    /* font-family: 'Istok Web', sans-serif; */
+    color: var(--text);
 }
 
-p, .categories span, .book-cat-sec span {
+h2, h3, h4{
     font-family: 'Arsenal', sans-serif;
+}
+
+p, .pop-up-inner .description,  .categories span, .book-cat-sec span {
+    font-family: 'Istok Web', sans-serif;
+    color: var(--text);
 }
 
 button,
@@ -168,7 +173,7 @@ section {
 
 .result-section{
     width: 100%;
-    background-color: var(--primaryColor);
+    background: linear-gradient(to left,#b9bfff, #a8bdfc, #8594fb);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     align-items: flex-start;   
@@ -183,7 +188,7 @@ section {
 /* Book Element */
 .result-section > *,
 .bookEle {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 0.5rem;
     border-radius: 5px;
     background-color: white;
@@ -210,10 +215,91 @@ section {
     bottom: 0;
     position: fixed;
     display: flex;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2));
-
+    background: rgba(28, 27, 27, 0.124);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pop-up-inner {
-    
+    background: var(--white);
+    width: 700px;
+    height: 550px;
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    font-size: 1.3rem;
+    text-align: left;
+    word-wrap: break-word;
+    border-radius: 5px;
+
+}
+
+.pop-up-inner  .close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    background-color: transparent;   
+}
+
+.pop-up-inner .innerBox {
+    display: flex;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.pop-up-inner .innerBox .info {
+    width: 60%;
+}
+
+.pop-up-inner .innerBox img {
+    margin-right: 20px;
+    width: 150px;
+    height: 200px;
+}
+
+.pop-up-inner .innerBox h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: var(--btnColor);
+    margin-bottom: 0.5rem;
+
+}
+
+.pop-up-inner .innerBox h4 {
+    color: var(--text);
+    font-size: 16px;
+}
+
+.pop-up-inner .description  {
+    margin-top: 2rem;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    text-align: justify;
+    margin-top: 2rem;
+    text-indent: 1rem;
+
+}
+
+.pop-up-inner .description::first-letter  {
+    text-transform: uppercase;
+}
+
+.pop-up-inner .innerBox button {
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background-color: var(--btnColor);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 0.7rem 0.5rem; 
 }
