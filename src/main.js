@@ -14,7 +14,7 @@ export default function HeroSection() {
     const searchBook = (e) => {
 
         if (e.key === "Enter") {
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCG4U2i3d-EwiYUNdtb-d9CmS8wUPoyRuE'+'&maxResults=40')
+            axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyCG4U2i3d-EwiYUNdtb-d9CmS8wUPoyRuE&maxResults=40`)
             .then(res => setData(res.data.items))
             .catch(err => console.log(err))
         }
