@@ -10,12 +10,14 @@ export default function BookComponent({book}) {
     
     console.log(book)
 
-    const toggleBtn = useCallback(() => {
+    const toggleBtn = () => {
         setShow(prev => !prev)
-    })
+    }
     
     const searchedData = book.map(item => {
+
         let Thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail
+        
         if (Thumbnail !== undefined) {
             return (
                 <>
