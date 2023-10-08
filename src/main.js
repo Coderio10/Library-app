@@ -6,23 +6,13 @@ import img from './assets/side-img.png'
 
 
 export default function HeroSection() {
-    
-    // hide hero section
-    const [action, nextPage] = React.useState(false)
-
-
-    function btnAction() {
-        nextPage(true)
-    }
-
-
+   
     // Search Functionality
     const [search, setSearch] = React.useState("")
     const [bookDatas, setData] = React.useState([])
 
     const searchBook = (e) => {
 
-        // btnAction()
         if (e.key === "Enter") {
             axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCG4U2i3d-EwiYUNdtb-d9CmS8wUPoyRuE' + '&maxResults=40')
             .then(res => setData(res.data.items))
@@ -32,7 +22,7 @@ export default function HeroSection() {
 
     return (
         <div>
-            { !action && <section className="hero">
+            <section className="hero">
                 <div className='text-sec'>
                     <h1 className='hero-header'>It's time to starve our ignorance!</h1>   
                     <p>Look up a book to read, learn principles from it to help better that area of your life</p>
@@ -45,10 +35,10 @@ export default function HeroSection() {
                 <div className='img-sec'>
                     <img src={img} alt='books on a shelf'/>
                 </div>
-            </section> }
-            { !action && <section>
+            </section> 
+            <section>
                 <BookComponent book={bookDatas}/>        
-            </section>}
+            </section>
         </div>
 
     )

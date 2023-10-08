@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import "./css/index.css"
 import Modal from './modal'
 
@@ -31,6 +31,8 @@ export default function BookComponent({book}) {
                 </>       
             )
         }
+
+        
     }) 
 
     console.log(searchedData)
