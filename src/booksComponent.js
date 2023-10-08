@@ -18,21 +18,21 @@ export default function BookComponent({book}) {
 
         let Thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail
         
-        if (Thumbnail !== undefined) {
-            return (
-                <>
-                    <div className='bookEle' onClick={() => { setShow(true); setItem(item)}} key={item.id}>
-                        <img src={Thumbnail} alt='Thumbnail' />
-                        <p>{item.volumeInfo.title}</p>
-                    </div>
-                    {show && <span>
-                        <Modal show={show} item={bookItem} onClose={toggleBtn}/>
-                    </span>}
-                </>       
-            )
+        if (Thumbnail === undefined) {
+            return null
         }
 
-        
+        return (
+            <>
+                <div className='bookEle' onClick={() => { setShow(true); setItem(item)}} key={item.id}>
+                    <img src={Thumbnail} alt='Thumbnail' />
+                    <p>{item.volumeInfo.title}</p>
+                </div>
+                {show && <span>
+                    <Modal show={show} item={bookItem} onClose={toggleBtn}/>
+                </span>}
+            </>       
+        )
     }) 
 
     console.log(searchedData)
