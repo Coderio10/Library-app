@@ -3,7 +3,7 @@ import "./css/index.css"
 import Modal from './modal'
 
 
-export default function BookComponent({book}) {
+export default function BookComponent({book, func}) {
     
     const [show, setShow] = React.useState(false) 
     const [bookItem, setItem] = React.useState()                
@@ -37,7 +37,7 @@ export default function BookComponent({book}) {
 
     console.log(searchedData)
     return (
-        <div className='result-section'>
+        <div id="bookcomponent" onLoad={func} className='result-section'>
             {searchedData }
         </div>
         

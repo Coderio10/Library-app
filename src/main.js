@@ -3,6 +3,7 @@ import "./css/index.css"
 import axios from 'axios'
 import BookComponent from './booksComponent';
 import img from './assets/side-img.png'
+import { FiArrowDownCircle } from "react-icons/fi"
 
 
 export default function HeroSection() {
@@ -10,6 +11,7 @@ export default function HeroSection() {
     // Search Functionality
     const [search, setSearch] = React.useState("")
     const [bookDatas, setData] = React.useState([])
+    const [Visibility, setVisibility] = React.useState(false)
 
     const searchBook = (e) => {
 
@@ -18,6 +20,10 @@ export default function HeroSection() {
             .then(res => setData(res.data.items))
             .catch(err => console.log(err))
         }
+    }
+
+    function loaded() {
+        setVisibility(true)
     }
 
     return (
@@ -35,9 +41,12 @@ export default function HeroSection() {
                 <div className='img-sec'>
                     <img src={img} alt='books on a shelf'/>
                 </div>
+                <div className='indicator'>
+                    { Visibility && <a href='#bookcomponent'> <FiArrowDownCircle className='icon'/></a>}
+                </div>
             </section> 
             <section>
-                <BookComponent book={bookDatas}/>        
+                <BookComponent book={bookDatas} func={loaded} />        
             </section>
         </div>
 
