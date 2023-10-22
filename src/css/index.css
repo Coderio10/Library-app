@@ -308,8 +308,9 @@ section {
 @media (max-width: 1000px) {
     .hero{
         flex-direction: column-reverse;
-        border: 1px solid red;
-        padding: 2rem 1.5rem;
+        justify-content: flex-end;
+        /* border: 1px solid red; */
+        padding: 0.2rem 1.5rem;
     }
 
     .hero .text-sec{
@@ -317,11 +318,13 @@ section {
         text-align: center;
         width: 100%;
         padding-right: 0;
+        /* border: 1px solid red; */
     }
 
     .img-sec {
         display: flex;
         justify-content: center;
+        /* border: 1px solid red; */
         width: 100%;
     }
     
