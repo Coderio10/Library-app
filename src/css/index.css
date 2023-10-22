@@ -309,22 +309,27 @@ section {
     .hero{
         flex-direction: column-reverse;
         justify-content: flex-end;
-        /* border: 1px solid red; */
+        border: 1px solid red;
         padding: 0.2rem 1.5rem;
     }
 
     .hero .text-sec{
-        flex-direction: column;
         text-align: center;
         width: 100%;
         padding-right: 0;
-        /* border: 1px solid red; */
+        border: 1px solid red;
+    }
+
+    .text-sec h1 {
+        font-size: 32px;
+    }
+    
+    .text-sec p {
+        font-size: 14px;
     }
 
     .img-sec {
-        display: flex;
-        justify-content: center;
-        /* border: 1px solid red; */
+        border: 1px solid red;
         width: 100%;
     }
     
@@ -332,6 +337,14 @@ section {
         width: 100%;
     }
 
+    .indicator {
+        bottom: 5%;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .indicator .icon {
         width: 30px;
         height: 30px;
