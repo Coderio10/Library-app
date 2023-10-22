@@ -331,6 +331,11 @@ section {
     .img-sec img {
         width: 100%;
     }
+
+    .indicator .icon {
+        width: 30px;
+        height: 30px;
+    }
     
     
 }
