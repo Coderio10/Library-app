@@ -1,5 +1,7 @@
 # Library App with Google API
 
+<img src='./src/assets/Design.png />
+
 ## Description
 
 <p> This app was created to make the search of book easier. Anyone can visit, search for a book of choice, and get linked to the external reference (Google Book) </p>
