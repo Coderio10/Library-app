@@ -52,7 +52,7 @@ section {
     align-items: center;
     min-height: 100vh;
     color: var(--text);
-    padding: 0 4rem;
+    padding: 2rem 4rem;
 }
 
 /* text Section */
@@ -151,7 +151,6 @@ section {
 .search-section {
     width: 100%;
     height: 200px;
-    border: 1px solid red;
     margin-top: 100px;
 }
 
@@ -309,7 +308,6 @@ section {
     .hero{
         flex-direction: column-reverse;
         justify-content: flex-end;
-        border: 1px solid red;
         padding: 0.2rem 1.5rem;
     }
 
@@ -317,7 +315,6 @@ section {
         text-align: center;
         width: 100%;
         padding-right: 0;
-        border: 1px solid red;
     }
 
     .text-sec h1 {
@@ -326,11 +323,10 @@ section {
     }
     
     .text-sec p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .img-sec {
-        border: 1px solid red;
         width: 100%;
     }
     
@@ -351,5 +347,16 @@ section {
         height: 30px;
     }
     
-    
+    .result-section{
+        justify-content: center;
+        align-items: center; 
+        border-radius: 5px;
+        gap: 0.5rem;
+        row-gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    section:last-child {
+        padding: 0.5rem;
+    }
 }
