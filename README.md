@@ -2,7 +2,7 @@
 
 ## Description
 
-file:///home/anointed/Desktop/big-lib/my-First-React-App/src/assets/Design.png
+![Design](https://raw.githubusercontent.com/Coderio10/Library-app/master/./src/assets/Design.png)
 
 <p> This app was created to make the search for books easier. Anyone can visit, search for a book of choice, and get linked to the external reference (Google Book) </p>
 
@@ -14,7 +14,7 @@ file:///home/anointed/Desktop/big-lib/my-First-React-App/src/assets/Design.png
     <il>Wait for the downward arrow to appear<li>
     <il>Scroll down afterwards<li>
     <il>Click on your desired book [a pop-up appears]<li>
-    <il>Click on the more button [It takes you to Google Books where you can read or make purchase]<li>
+    <il>Click on the more button [It takes you to Google Books where you can read or make a purchase]<li>
 </ul> 
 
 MAKE SURE YOU GIVE THIS PROJECT A STAR
