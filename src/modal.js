@@ -1,5 +1,6 @@
 import React from 'react'
 import "./css/index.css"
+import { CgClose } from "react-icons/cg"
 
 export default function bookComponent({item, onClose} ) {
 
@@ -9,7 +10,9 @@ export default function bookComponent({item, onClose} ) {
     return (
         <div className='pop-up'>
             <div className='pop-up-inner'>
-                <button className='close' onClick={() => onClose()}> X </button>
+                <button className='close' onClick={() => onClose()}> 
+                    <CgClose />
+                </button>
                 <div className='innerBox'>
                     <img src={Thumbnail} alt='' />
                     <div className='info'>

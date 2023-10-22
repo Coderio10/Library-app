@@ -12,6 +12,7 @@ export default function HeroSection() {
     const [search, setSearch] = React.useState("")
     const [bookDatas, setData] = React.useState([])
     const [Visibility, setVisibility] = React.useState(false)
+    const [show, setVisi] = React.useState(false)
 
     const searchBook = (e) => {
 
@@ -24,7 +25,10 @@ export default function HeroSection() {
 
     function loaded() {
         setVisibility(true)
+        setVisi(true)
     }
+    
+
 
     return (
         <div>
@@ -45,9 +49,9 @@ export default function HeroSection() {
                     { Visibility && <a href='#bookcomponent'> <FiArrowDownCircle className='icon'/></a>}
                 </div>
             </section> 
-            <section>
+            { show && <section>
                 <BookComponent book={bookDatas} func={loaded} />        
-            </section>
+            </section> }
         </div>
 
     )

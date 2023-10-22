@@ -2,12 +2,12 @@
 
 ## Description
 
-<p> This app was created to make the search of book easier. Anyone can visit, search for a book of choice, and get linked to the external refereance (Google Book) </p>
+<p> This app was created to make the search of book easier. Anyone can visit, search for a book of choice, and get linked to the external reference (Google Book) </p>
 
 ## Use
 
 <ul>
-    <il>Open https://coderio-library-app.netlify.app/ on your browser<li>
+    <li>Open https://coderio-library-app.netlify.app/ on your browser<li>
     <il>Search for your desired book<li>
     <il>Wait for the downward arrow to appear<li>
     <il>Scroll down afterwards<li>
