@@ -1,0 +1,64 @@
+:root {
+
+    /* Primary */
+
+    --Softred: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Darkdesaturatedcyan-graphicdesigntext: hsl(167, 40%, 24%);
+    --Darkblue-photographytext: hsl(198, 62%, 26%);
+    --Darkmoderatecyan-footer: hsl(168, 34%, 41%);
+
+    /* Neutral */
+
+    --Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+    --Verydarkgrayishblue: hsl(213, 9%, 39%);
+    --Darkgrayishblue: hsl(232, 10%, 55%);
+    --Grayishblue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+
+}
+
+h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+}
+
+p {
+    font-family: 'Barlow', sans-serif;
+}
+
+.footer {
+    background-color: #9cdcce;
+    min-height: 50vh;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer img {
+    fill: var(--Darkmoderatecyan-footer);
+}
+
+.footer ol {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 2rem;
+}
+
+ol li {
+    color: var(--Darkmoderatecyan-footer);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.footer div {
+    display: flex;
+    gap: 20px;
+}
+
+.footer div img {
+    width: 16px;
+    height: 16px;
+}

@@ -1,0 +1,122 @@
+:root {
+
+    /* Primary */
+
+    --Softred: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Darkdesaturatedcyan-graphicdesigntext: hsl(167, 40%, 24%);
+    --Darkblue-photographytext: hsl(198, 62%, 26%);
+    --Darkmoderatecyan-footer: hsl(168, 34%, 41%);
+
+    /* Neutral */
+
+    --Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+    --Verydarkgrayishblue: hsl(213, 9%, 39%);
+    --Darkgrayishblue: hsl(232, 10%, 55%);
+    --Grayishblue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+
+}
+
+p {
+    font-family: 'Barlow', sans-serif;
+}
+
+.Navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem;
+    overflow: hidden;
+    margin-bottom: -90px;
+}
+
+.Navbar ul {
+    display: flex;
+    gap: 30px;
+    align-items: center; 
+}
+
+.Navbar ul li {
+    color: var(--White);
+    font-size: 14px;
+}
+
+.nav-toggle {
+    cursor: pointer;
+    display: none;
+    background-color: transparent;
+    border: none;
+}
+
+.Navbar ul li:last-child {
+    background-color: var(--White);
+    color: var(--Verydarkdesaturatedblue);
+    padding: .7rem 1.7rem;
+    border-radius: 30px;
+}
+
+@media (max-width: 570px) {
+    .Navbar {
+        padding: 1rem;
+        /* margin-bottom: -80px; */
+        /* position: relative; */
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .Navbar ul {
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        width: 90%;
+        height: 90vh;
+        padding: 3rem;
+        top: -100%;
+        left: 5%;
+        right: 5%;
+        transition: all 0.3s ease;
+        margin: 10px auto;
+        background-color: var(--White);
+        border-radius: 5px;
+    }
+
+    .Navbar ul::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 2%;
+        margin-left: 5px;
+        border-width: 10px;
+        border-style: solid;
+        border-color:   transparent transparent var(--White) transparent;
+    }
+
+    .Navbar ul.active {
+        top: 70px;
+    }
+
+
+    .Navbar ul li {
+        color: var(--Darkblue-photographytext);
+        font-size: 15px;
+    }
+
+    .nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .Navbar ul li:last-child {
+        background-color: var(--Yellow);
+        padding: 1rem 2.5rem;
+        text-transform: uppercase;
+    }
+}
